@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{A5329C74-C0EE-456B-001C-B84ECB3589EC}</ProjectGuid>
+    <ProjectGuid>{521BD3E9-4A0E-7B0F-C884-F637EF5B71BA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -57,10 +57,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\ManageSound.cs" />
+    <Compile Include="Assets\Scripts\PauseResume.cs" />
     <Compile Include="Assets\Scripts\TextCoroutine.cs" />
     <Compile Include="Assets\Scripts\OptionMenu.cs" />
-    <Compile Include="Assets\Scripts\PauseResume.cs" />
-    <Compile Include="Assets\Scripts\ManageSound.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
