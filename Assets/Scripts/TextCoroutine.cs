@@ -1,12 +1,21 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class TextCoroutine : MonoBehaviour
 {
     public Button Next;
     public Text Object;
-    private string text;
+    public Image fadein;
     bool ended, coroutineStarted = false;
+    
+    private int countTexts = 0;
+   
+    private string[] texts = new string[]
+    {
+        "Здравствуй! Меня зовут Макс, и сегодня я буду твоим гидом в мире компьютерной безопасности. Не будем медлить!",
+        "Наша первая тема : Кража личных данных, утечка информации. Изучим пару терминов перед практикой."
+    };
 
     private void Update()
     {
@@ -14,25 +23,20 @@ public class TextCoroutine : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && coroutineStarted) ended = true;
     }
 
-    public void UpdateAndStart(Text obj)
-    {
-        if (obj == Object) return;
-        Destroy(Object);
-        Object = obj;
-        StartThis();
-    }
+    
 
     public void StartThis()
     {
+        if (countTexts > 1) { fadein.GetComponent<Animator>().enabled = true; return; }
         Next.GetComponent<Button>().interactable = false;
         coroutineStarted = true;
-        text = Object.text;
         Object.text = "";
         Object.GetComponent<Text>().enabled = true;
-        StartCoroutine(InvokeCoroutine());
+        StartCoroutine(InvokeCoroutine(texts[countTexts]));
+        countTexts++;
     }
 
-    IEnumerator InvokeCoroutine()
+    IEnumerator InvokeCoroutine(string text)
     {
         foreach (var letter in text)
         {
