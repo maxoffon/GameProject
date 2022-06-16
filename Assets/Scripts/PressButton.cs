@@ -5,7 +5,14 @@ using UnityEngine.UI;
 
 public class PressButton : MonoBehaviour
 {
-    public Color trueColor = Color.HSVToRGB(255, 255, 255);
+    private Color trueColor;
+
+    private void Awake()
+    {
+        var color = Color.white;
+        color.a = 1;
+        trueColor = color;
+    }
     public void Press()
     {
         var button = GetComponent<Button>();

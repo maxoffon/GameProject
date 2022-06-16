@@ -12,9 +12,13 @@ public class QuizSet : MonoBehaviour
     public void CheckAnswer()
     {
         foreach (var elem in Variants)
-            if (elem.colors.normalColor == elem.colors.pressedColor)
+        {
+            if (elem.colors.normalColor == elem.colors.pressedColor || elem.GetComponent<Animator>().GetCurrentAnimatorClipInfo(0)[0].clip.name == "correctAnswer")
+            {
                 elem.onClick.Invoke();
-        if (Variants[0].colors.normalColor == Variants[0].colors.pressedColor)
-            Variants[0].GetComponent<Animator>().enabled = true;
+                elem.GetComponent<Animator>().enabled = true;
+            }
+            elem.enabled = false;
+        }    
     }
 }
