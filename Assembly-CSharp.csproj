@@ -66,6 +66,8 @@
     <Compile Include="Assets\Scripts\PauseResume.cs" />
     <Compile Include="Assets\Scripts\characterInfo.cs" />
     <Compile Include="Assets\Scripts\TextCoroutine.cs" />
+    <Compile Include="Assets\Scripts\QuizSet.cs" />
+    <Compile Include="Assets\Scripts\PressButton.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
