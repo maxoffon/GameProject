@@ -7,6 +7,7 @@ public class TextCoroutineGame : MonoBehaviour
 {
     public Button Next;
     public Text Object;
+    public Image fadein;
     private int countFacts = 0;
     bool ended, started = false;
     private string[] facts = new string[]
@@ -27,14 +28,17 @@ public class TextCoroutineGame : MonoBehaviour
 
     public void StartThis()
     {
-        if (countFacts > 6) return;
-        Next.GetComponent<Button>().interactable = false;
-        started = true;
-        Object.text = "";
-        Object.GetComponent<Text>().enabled = true;
-        StartCoroutine(InvokeCoroutine(facts[countFacts]));
-        countFacts++;
-        PlayerPrefs.SetInt("factsEnd", countFacts);
+        if (countFacts > 6) fadein.GetComponent<Animator>().enabled = true;
+        else
+        {
+            Next.GetComponent<Button>().interactable = false;
+            started = true;
+            Object.text = "";
+            Object.GetComponent<Text>().enabled = true;
+            StartCoroutine(InvokeCoroutine(facts[countFacts]));
+            countFacts++;
+            PlayerPrefs.SetInt("factsEnd", countFacts);
+        }  
     }
     IEnumerator InvokeCoroutine(string text)
     {
