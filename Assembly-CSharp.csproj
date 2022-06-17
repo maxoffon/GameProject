@@ -68,6 +68,9 @@
     <Compile Include="Assets\Scripts\PressButton.cs" />
     <Compile Include="Assets\Scripts\characterInfo.cs" />
     <Compile Include="Assets\Scripts\TextCoroutine.cs" />
+    <Compile Include="Assets\Scripts\PlayAnim.cs" />
+    <Compile Include="Assets\Scripts\TextCoroutineQuiz.cs" />
+    <Compile Include="Assets\Scripts\DontDestroy.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

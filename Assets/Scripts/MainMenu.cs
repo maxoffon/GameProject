@@ -25,4 +25,14 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene(index);
     }
+
+    public void SetActiveObj()
+    {
+        gameObject.SetActive(!gameObject.activeInHierarchy);
+    }
+
+    public void DestroyObj()
+    {
+        Destroy(GameObject.FindGameObjectWithTag("music"));
+    }
 }

@@ -10,11 +10,12 @@ public class VolumeManager : MonoBehaviour
     private static readonly string MuterState = "MuterState";
     private int firstPlayint;
     public Slider musicSlider;
-    public AudioSource musicAudio;
+    private AudioSource musicAudio;
     public Toggle muter;
 
     private void Awake()
     {
+        musicAudio = GameObject.FindGameObjectWithTag("music").GetComponent<AudioSource>();
         firstPlayint = PlayerPrefs.GetInt(FirstPlay);
         if(firstPlayint == 0)
         {

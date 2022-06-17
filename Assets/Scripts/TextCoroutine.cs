@@ -1,14 +1,13 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 public class TextCoroutine : MonoBehaviour
 {
     public Button Next;
     public Text Object;
     public Image fadein;
     bool ended, coroutineStarted = false;
-    
+    bool firstAnim = true;
     private int countTexts = 0;
    
     private string[] texts = new string[]
@@ -19,21 +18,22 @@ public class TextCoroutine : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButton(0)) GetComponent<Animator>().enabled = true;
+        if (Input.GetMouseButton(0) && firstAnim) { GetComponent<Animation>().Play(); firstAnim = false; }
         if (Input.GetKeyDown(KeyCode.Space) && coroutineStarted) ended = true;
     }
 
-    
-
     public void StartThis()
     {
-        if (countTexts > 1) { fadein.GetComponent<Animator>().enabled = true; return; }
-        Next.GetComponent<Button>().interactable = false;
-        coroutineStarted = true;
-        Object.text = "";
-        Object.GetComponent<Text>().enabled = true;
-        StartCoroutine(InvokeCoroutine(texts[countTexts]));
-        countTexts++;
+        if (countTexts > 1) fadein.GetComponent<Animation>().Play();
+        else
+        {
+            Next.GetComponent<Button>().interactable = false;
+            coroutineStarted = true;
+            Object.text = "";
+            Object.GetComponent<Text>().enabled = true;
+            StartCoroutine(InvokeCoroutine(texts[countTexts]));
+            countTexts++;
+        }
     }
 
     IEnumerator InvokeCoroutine(string text)

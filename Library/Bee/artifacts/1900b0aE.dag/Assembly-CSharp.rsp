@@ -369,15 +369,18 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/Scripts/ChangePictures.cs"
 "Assets/Scripts/characterInfo.cs"
+"Assets/Scripts/DontDestroy.cs"
 "Assets/Scripts/EnableAnimator.cs"
 "Assets/Scripts/ImageSelect.cs"
 "Assets/Scripts/MainMenu.cs"
 "Assets/Scripts/ManageSound.cs"
 "Assets/Scripts/PauseResume.cs"
+"Assets/Scripts/PlayAnim.cs"
 "Assets/Scripts/PressButton.cs"
 "Assets/Scripts/QuizSet.cs"
 "Assets/Scripts/TextCoroutine.cs"
 "Assets/Scripts/TextCoroutineGame.cs"
+"Assets/Scripts/TextCoroutineQuiz.cs"
 "Assets/Scripts/VolumeManager.cs"
 -langversion:9.0
 
