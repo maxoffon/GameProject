@@ -18,12 +18,14 @@ public class TextCoroutineQuiz : MonoBehaviour
 
     public void StartThis()
     {
+        var correctAns = PlayerPrefs.GetInt("corAns");
+        var ending = correctAns == 1 ? "" : correctAns > 1 && correctAns < 5 ? "а" : "ов";
         Again.GetComponent<Button>().interactable = false;
         ToMenu.GetComponent<Button>().interactable = false;
         started = true;
         LocalText.text = "";
         LocalText.enabled = true;
-        StartCoroutine(InvokeCoroutine("ѕоздравл€ю, вы прошли тест и ответили правильно на " + PlayerPrefs.GetInt("corAns") + " вопрос(а/ов) из 4. ≈сли хотите, можете пройти тест заново или же перейти в меню. ∆дите новые уровни в обновлени€х :)"));
+        StartCoroutine(InvokeCoroutine("ѕоздравл€ю, вы прошли тест и ответили правильно на " + correctAns + " вопрос" + ending + " из 6. ≈сли хотите, можете пройти тест заново или же перейти в меню. ∆дите новые уровни в обновлени€х :)"));
     }
     IEnumerator InvokeCoroutine(string text)
     {

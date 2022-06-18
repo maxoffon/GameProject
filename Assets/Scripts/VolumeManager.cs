@@ -15,7 +15,7 @@ public class VolumeManager : MonoBehaviour
 
     private void Awake()
     {
-        musicAudio = GameObject.FindGameObjectWithTag("music").GetComponent<AudioSource>();
+        GameObject.FindGameObjectWithTag("music").TryGetComponent<AudioSource>(out musicAudio);
         firstPlayint = PlayerPrefs.GetInt(FirstPlay);
         if(firstPlayint == 0)
         {
